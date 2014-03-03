@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.regs</groupId>
-    <artifactId>gs-rest-service</artifactId>
+    <artifactId>restwscode</artifactId>
     <version>1</version>
     <packaging>war</packaging>
 
@@ -42,6 +42,25 @@
             <version>${jackson.version}</version>
         </dependency>
 
+        <!-- Slf4j with Log4j binding -->
+        <!-- one dependency slf4j-log4j12 is sufficient -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.6</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>1.7.6</version>
+        </dependency>
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.17</version>
+        </dependency>
+
+
         <!--<dependency>-->
             <!--<groupId>org.apache.maven.plugins</groupId>-->
             <!--<artifactId>maven-war-plugin</artifactId>-->
@@ -52,7 +71,7 @@
     </dependencies>
 
     <build>
-        <finalName>restJar</finalName>
+        <finalName>restCode</finalName>
         <plugins>
             <plugin> 
                 <artifactId>maven-compiler-plugin</artifactId> 
