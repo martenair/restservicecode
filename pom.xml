@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.regs</groupId>
@@ -60,12 +60,17 @@
             <version>1.2.17</version>
         </dependency>
 
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>3.1.0</version>
+        </dependency>
 
         <!--<dependency>-->
-            <!--<groupId>org.apache.maven.plugins</groupId>-->
-            <!--<artifactId>maven-war-plugin</artifactId>-->
-            <!--<version>2.4</version>-->
-            <!--<type>maven-plugin</type>-->
+        <!--<groupId>org.apache.maven.plugins</groupId>-->
+        <!--<artifactId>maven-war-plugin</artifactId>-->
+        <!--<version>2.4</version>-->
+        <!--<type>maven-plugin</type>-->
         <!--</dependency>-->
 
     </dependencies>
@@ -73,8 +78,8 @@
     <build>
         <finalName>restCode</finalName>
         <plugins>
-            <plugin> 
-                <artifactId>maven-compiler-plugin</artifactId> 
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
                 <version>2.3.2</version>
                 <configuration>
                     <source>${jdk.version}</source>
@@ -98,7 +103,15 @@
                     <!--settings for remote tomcat:-->
                     <!--&lt;!&ndash;<url>http://127.0.0.1:8080/manager</url>&ndash;&gt;-->
                     <!--<server>TomcatServer</server>-->
-              </configuration>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>2.4</version>
+                <configuration>
+                    <failOnMissingWebXml>false</failOnMissingWebXml>
+                </configuration>
             </plugin>
 
         </plugins>

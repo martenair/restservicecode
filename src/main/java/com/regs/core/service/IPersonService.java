@@ -7,6 +7,8 @@ import com.regs.core.domain.Person;
  */
 public interface IPersonService {
     Person getRandom();
+
     Person getById(Long id);
+
     void save(Person obj);
 }

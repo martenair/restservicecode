@@ -2,6 +2,7 @@ package com.regs.core.service;
 
 import com.regs.core.domain.Person;
 import org.springframework.stereotype.Service;
+
 import java.util.Random;
 
 /**

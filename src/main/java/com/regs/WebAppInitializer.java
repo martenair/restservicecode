@@ -1,5 +1,7 @@
 package com.regs;
 
+import com.regs.config.CoreConfig;
+import com.regs.config.MvcConfig;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.WebApplicationInitializer;
@@ -39,11 +41,11 @@ public class WebAppInitializer implements WebApplicationInitializer {
 
     private void configureSpringMvc(ServletContext servletContext, WebApplicationContext rootContext) {
         AnnotationConfigWebApplicationContext mvcContext = new AnnotationConfigWebApplicationContext();
-        mvcContext.register(MVCConfig.class);
+        mvcContext.register(MvcConfig.class);
 
         mvcContext.setParent(rootContext);
         ServletRegistration.Dynamic appServlet = servletContext.addServlet(
-                "webservice", new DispatcherServlet(mvcContext));
+                "appservlet", new DispatcherServlet(mvcContext));
         appServlet.setLoadOnStartup(1);
         Set<String> mappingConflicts = appServlet.addMapping("/");
 
@@ -52,7 +54,7 @@ public class WebAppInitializer implements WebApplicationInitializer {
                 LOG.error("Mapping conflict: " + s);
             }
             throw new IllegalStateException(
-                    "'webservice' cannot be mapped to '/'");
+                    "'appservlet' cannot be mapped to '/'");
         }
     }
 }
