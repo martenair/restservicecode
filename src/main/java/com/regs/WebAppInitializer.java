@@ -1,7 +1,6 @@
 package com.regs;
 
 import com.regs.config.CoreConfig;
-import com.regs.config.MvcConfig;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.WebApplicationInitializer;
